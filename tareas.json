@@ -1,0 +1,22 @@
+[
+    {
+        "titulo": "Aprobar el precurso",
+        "estado": "terminada"
+    },
+    {
+        "titulo": "Aprobar el curso",
+        "estado": "en progreso"
+    },
+    {
+        "titulo": "Crear Linkedin",
+        "estado": "en progreso"
+    },
+    {
+        "titulo": "Ganar el primer millón como desarrollador fullstack",
+        "estado": "pendiente"
+    },
+    {
+        "titulo": "Felicitar al profe",
+        "estado": "pendiente"
+    }
+]
