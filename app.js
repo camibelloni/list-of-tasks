@@ -53,6 +53,6 @@ switch(accion) {
     // Se envía una acción pero no hay lógica para la misma
     default:
         console.log('No entiendo qué me estás pidiendo');
-        console.log('Las acciones disponibles son: listar');
+        console.log('Las acciones disponibles son: listar, crear');
         break;
 }
