@@ -1,25 +1,5 @@
-/*const fs = require('fs');
-//readFileSync
-//Leer un archivo
-
-const lecturaArchivo = fs.readFileSync('./tareas.json');
-
-//Parsear JSON a código JavaScript
-const tareas = JSON.parse(lecturaArchivo)
-
-//
-
-//Hago logica
-
-//fs.writeFileSync('./tareas.json', 'Hola') no lo entiende
-fs.writeFileSync('./tareas.json', JSON.stringify(tareas)) // convierte de nuevo a JSON
-
-const argumento = process.argv[2]
-console.log(tareas)
-*/
 // Utilizaremos este módulo para obtener las tareas en base a la lógica que contiene (ver archivo)
 let moduloTareas = require('./tareas');
-
 // con process.argv obtengo un array de los comandos que se ejecutaron en consola
 // por ejemplo para el comando: node app.js listar
 // La posición [0] de process.argv será node
@@ -45,6 +25,23 @@ switch(accion) {
         });
 
         break;
+        case 'crear':
+            console.log('Crear nueva tarea');
+            const nombreTarea = process.argv[3];
+            let tarea = {
+                titulo: nombreTarea,
+                estado: 'pendiente'
+            }
+            moduloTareas.agregarNuevaTarea(tarea)
+            // En la variable tareas tendremos el resultado de invocar al método listarTareas del módulo
+            // qué, si salió todo bien, es el array de tareas leido y parseado desde el archivo JSON
+           // let tareas = moduloTareas.listarTareas();
+            
+            // con forEach() itero (repito una operación) por cada tarea 
+            // con el objetivo de mostrar su título y estado en consola
+           
+    
+            break;
 
     // Caso para node app.js 
     // (Sin acción, por eso undefined)
@@ -59,5 +56,3 @@ switch(accion) {
         console.log('Las acciones disponibles son: listar');
         break;
 }
-
-

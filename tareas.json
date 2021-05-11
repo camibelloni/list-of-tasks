@@ -18,5 +18,13 @@
     {
         "titulo": "Felicitar al profe",
         "estado": "pendiente"
+    },
+    {
+        "titulo": "tarea",
+        "estado": "pendiente"
+    },
+    {
+        "titulo": "tarea2",
+        "estado": "pendiente"
     }
 ]

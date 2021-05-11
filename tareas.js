@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 /**
  * Módulo de tareas
  */
@@ -27,5 +26,17 @@ const listarTareas = () => {
     return tareasParseadas;
 };
 
+const agregarNuevaTarea = (tarea) => {
+    const tareas = listarTareas();
+    tareas.push(tarea);
+    const tareasEnJSON = JSON.stringify(tareas)
+    fs.writeFileSync(nombreDelArchivo, tareasEnJSON)
+}
 // En module.exports solo exportamos lo que necesitarán otros módulos, por ahora listarTareas
-module.exports = {listarTareas}
+module.exports = {listarTareas, agregarNuevaTarea}
+
+// Primero leer el archivo en .json y retornarlo parseado
+// Pushear a los datos parseados (array de tareas) una nueva tarea
+// tareas.push(nuevaTarea)
+// VOLVER a convertir a JSON - JSON.stringify()
+// Guardar el archivo tareas.json
